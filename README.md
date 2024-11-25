@@ -14,3 +14,6 @@ En y faisant ce qu'il désire sur sa propre page (message, style, animation, etc
 ## Règles
 - Le dossier doit être nommé avec le prénom et le nom de l'élève (ex: `Prenom_Nom`).
 - Vous devez mettre votre nom dans le fichier JavaScript permettant l'affichage de vos noms dans l'index.
+
+## Exemples
+- Votre carte : https://enioaiello.github.io/cadeau/views/[votre-nom]/index.html
