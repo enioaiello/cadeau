@@ -1,19 +1,11 @@
 const students = [
     {
         name: 'John Doe',
-        link: './views/john-doe.html',
+        link: './views/john-doe/index.html',
     },
     {
         name: 'Jane Doe',
-        link: './views/jane-doe.html',
-    },
-    {
-        name: 'John Smith',
-        link: './views/john-smith.html',
-    },
-    {
-        name: 'Jane Smith',
-        link: './views/jane-smith.html',
+        link: './views/jane-doe/index.html',
     }
 ];
 
