@@ -1,19 +1,22 @@
 # Cadeau de départ
-## Important
-Chaque travail doit être fait sur une branche à votre nom.\
-Ne rien pusher sur la branche `main`.\
-Le travail doit être fait sur la branche de l'élève et ensuite merge sur la branche `main`.
-## Concept
-Pour le cadeau de départ, chaque élève (de deuxième, troisième année et les autres participants) ont droit à leur propre dossier.\
-Dans ce dossier, les élèves ont un fichier HTML, un fichier CSS (ou SCSS compilé) et un fichier JavaScript.\
-Le dépôt, restant privé, tout passera par GitHub Pages pour "offrir le cadeau".\
-Cela signifie que nous sommes contraint d'utiliser des technologies front-end.\
-Le but est donc de faire un cadeau de départ en montrant ce que l'on sait faire en front-end (suite à l'enseignement de Mila).\
-Chacun doit y mettre sa propre toucher personnelle, sa créativité, son originalité, etc.\
-En y faisant ce qu'il désire sur sa propre page (message, style, animation, etc.).
-## Règles
-- Le dossier doit être nommé avec le prénom et le nom de l'élève (ex: `Prenom_Nom`).
-- Vous devez mettre votre nom dans le fichier JavaScript permettant l'affichage de vos noms dans l'index.
 
-## Exemples
-- Votre carte : https://enioaiello.github.io/cadeau/views/[votre-nom]/index.html
+## Concept
+
+Pour le départ de [Mila](https://github.com/MilaHG), professeure de technologie à EDEN School Paris depuis son ouverture, la promotion de 2022-2023, la promotion de 2023-2024 et l'ancienne professeure de technologie de deuxième année ont décidé de faire une carte Web collaborative.\
+Le but est simple : dire au revoir en montrant ce qu'on a appris grâce à ses cours.
+
+## Exigences
+
+- [x] Utiliser HTML, CSS et JavaScript
+- [x] Utiliser Git et GitHub
+- [x] Utiliser GitHub Pages
+- [x] Faire une carte Web collaborative
+
+## Utilisation
+
+- Ouvrir l'URL [enioaiello.github.io/cadeau](https://enioaiello.github.io/cadeau) pour voir la carte Web collaborative.
+- Cliquer sur le nom d'une personne pour voir sa carte Web personnelle.
+
+## Contributeurs
+
+Pour voir la liste des contributeurs, [cliquer ici](https://github.com/enioaiello/cadeau/graphs/contributors).

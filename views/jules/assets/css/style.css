@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #1e1e1e;
+    color: #d4f7c9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 36px;
+    text-align: center;
+    color: rgb(80, 250, 123);
+    margin-bottom: 20px;
+    animation: own2 1s infinite;
+
+}
+
+.letter .line {
+    font-size: 18px;
+    animation: typing 2s steps(40) 1s 1 normal both;
+}
+
+/* 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+} */
+
+.line:hover {
+    color: #8be9fd;
+    cursor: pointer;
+}
+
+.h1 {
+    animation: own2 1s infinite;
+}
+
+@keyframes own2 {
+    0% { text-shadow: 0 0 4px rgba(80, 250, 123, 0.443), 0 0 1px rgba(80, 250, 123, 0.443), 0 0 5px rgba(80, 250, 123, 0.443), 0 0 9px rgba(80, 250, 123, 0.443) 0 0 24px rgba(80, 250, 123, 0.443), 0 0 8px rgba(80, 250, 123, 0.443), 0 0 44px rgba(80, 250, 123, 0.443), 0 0 65px rgba(80, 250, 123, 0.443); } 
+    50% { text-shadow: 0 0 1px rgba(80, 250, 123, 0.443), 0 0 0px rgba(80, 250, 123, 0.443), 0 0 1px rgba(80, 250, 123, 0.443), 0 0 2px rgba(80, 250, 123, 0.443), 0 0 8px rgba(80, 250, 123, 0.443), 0 0 4px rgba(80, 250, 123, 0.443), 0 0 12px rgba(80, 250, 123, 0.443), 0 0 30px rgba(80, 250, 123, 0.443); }
+    100% { text-shadow: 0 0 4px rgba(80, 250, 123, 0.443), 0 0 1px rgba(80, 250, 123, 0.443), 0 0 5px rgba(80, 250, 123, 0.443), 0 0 9px rgba(80, 250, 123, 0.443) 0 0 24px rgba(80, 250, 123, 0.443), 0 0 8px rgba(80, 250, 123, 0.443), 0 0 44px rgba(80, 250, 123, 0.443), 0 0 65px rgba(80, 250, 123, 0.443); } 
+}

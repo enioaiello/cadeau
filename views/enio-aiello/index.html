@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carte de départ d'Enio">
+    <title>Carte d'Enio</title>
+    <!-- Liens CSS et icône -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/wave.png">
+</head>
+<body>
+    <!-- Création du container qui contient toute la page -->
+    <div class="container">
+        <!-- Créateur d'un en-tête avec un titre principal, une animation avec une main et une flèche qui dirige vers le message -->
+        <div class="head">
+            <!-- Container mettant le titre et la main -->
+            <div class="center">
+                <img src="./img/wave.png" alt="Signe de la main" class="main">
+                <h1 class="title">Bon départ !</h1>
+            </div>
+            <!-- Redirige au bas de la page, là où il y a le contenu -->
+            <a href="#content" class="arrow"><img src="./img/down-arrow.png" alt="Flèche pointant vers le bas"
+                    class="icon" title="Défiler"></a>
+            <img src="./img/light-bulb.png" alt="En savoir plus" title="Je veux en savoir plus !" class="about">
+        </div>
+        <!-- Contenu de la lettre, avec une ancre pour le défilement -->
+        <div id="content" class="main">
+            <div class="content">
+                <h2 class="title">Merci !</h2>
+                <p class="text">Je souhaitais vous remercier pour toutes les connaissances que vous avez sues
+                    m'apporter. Quand l'on observe mon niveau quand j'ai commencé ce lycée et mon niveau maintenant… il
+                    n'y a pas photo !</p>
+                <p class="text">Je voulais également vous remercier pour tout ce que vous avez pu faire pour contribuer
+                    à l'école. Et je pense que, comme beaucoup, vous êtes l'une des meilleures professeures (avec
+                    Sybille) de tech !</p>
+                <p class="text">En tout cas, je voulais vous souhaiter une bonne continuation !</p>
+                <p class="text">- Enio</p>
+                <p class="text post-scriptum">PS : il n'y a pas de <code class="code">br</code> ou de <code
+                        class="code">var</code> dans ce code.</p>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
