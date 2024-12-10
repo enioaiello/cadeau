@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang='FR-fr'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Merci Mila ♥</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Petit cadeau pour Mila ♥'>
+  <link rel='stylesheet' href='style.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src='script.js'></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    .accordion {
+      @media (min-width: 768px){
+      	width: 35vw;
+      }
+    }    
+  </style>
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif;">
+  <canvas id="world" class="z-n1 position-absolute"></canvas>
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; ">
+    <div class="p-5 bg-dark rounded-5 shadow d-flex flex-column gap-3">
+      <div class="p-2 bg-white rounded shadow">
+        <h1 class="text-center">Mila <span class="badge text-bg-info">La Best</span></h1>
+      </div>
+
+      <div class="accordion container-sm-fluid p-0" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne">
+              Petit Roman rien que pour toi ♥
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Merci Mila,</strong> je pense que j'ai passé mes meilleures années de code grâce à toi. Tes cours, clairs et faciles à comprendre, ainsi que ton écoute bienveillante, ont rendu l'apprentissage un vrai plaisir. J'ai adoré apprendre avec toi. Merci pour tout ♥
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="badge text-bg-primary text-wrap align-self-end" style="width: 6rem;">
+        Prend soin de toi !
+      </div>
+    </div>
+  </div>
+  <a href="https://github.com/VialsShiny" class="position-absolute bottom-0 end-0 m-4">
+    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="VialsShiny profile Picture" class="shadow" style="height: 10vh; width: 10vh; border-radius: 100%;">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    const NUM_CONFETTI = 350;
+    const COLORS = [
+      [85, 71, 106],
+      [174, 61, 99],
+      [219, 56, 83],
+      [244, 92, 68],
+      [248, 182, 70]
+    ];
+    const PI_2 = 2 * Math.PI;
+
+    const canvas = document.getElementById("world");
+    const context = canvas.getContext("2d");
+    let w = 0;
+    let h = 0;
+
+    const resizeWindow = () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', resizeWindow, false);
+
+    window.onload = () => setTimeout(resizeWindow, 0);
+
+    const range = (a, b) => (b - a) * Math.random() + a;
+
+    const drawCircle = (x, y, r, style) => {
+      context.beginPath();
+      context.arc(x, y, r, 0, PI_2, false);
+      context.fillStyle = style;
+      context.fill();
+    };
+
+    let xpos = 0.5;
+
+    document.onmousemove = (e) => {
+      xpos = e.pageX / w;
+    };
+
+    window.requestAnimationFrame = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      ((callback) => window.setTimeout(callback, 1000 / 60));
+
+    class Confetti {
+      constructor() {
+        this.style = COLORS[Math.floor(range(0, 5))];
+        this.rgb = `rgba(${this.style[0]},${this.style[1]},${this.style[2]}`;
+        this.r = Math.floor(range(2, 6));
+        this.r2 = 2 * this.r;
+        this.replace();
+      }
+
+      replace() {
+        this.opacity = 0;
+        this.dop = 0.03 * range(1, 4);
+        this.x = range(-this.r2, w - this.r2);
+        this.y = range(-20, h - this.r2);
+        this.xmax = w - this.r;
+        this.ymax = h - this.r;
+        this.vx = range(0, 2) + 8 * xpos - 5;
+        this.vy = 0.7 * this.r + range(-1, 1);
+      }
+
+      draw() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.opacity += this.dop;
+
+        if (this.opacity > 1) {
+          this.opacity = 1;
+          this.dop *= -1;
+        }
+
+        if (this.opacity < 0 || this.y > this.ymax) {
+          this.replace();
+        }
+
+        if (!(0 < this.x && this.x < this.xmax)) {
+          this.x = (this.x + this.xmax) % this.xmax;
+        }
+
+        drawCircle(Math.floor(this.x), Math.floor(this.y), this.r, `${this.rgb},${this.opacity})`);
+      }
+    }
+
+    const confetti = Array.from({ length: NUM_CONFETTI }, () => new Confetti());
+
+    const step = () => {
+      requestAnimationFrame(step);
+      context.clearRect(0, 0, w, h);
+      confetti.forEach((c) => c.draw());
+    };
+
+    step();
+  </script>
+</body>
+
+</html>
