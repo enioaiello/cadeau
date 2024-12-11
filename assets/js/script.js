@@ -42,24 +42,30 @@ const students = [
     {
         name: 'Thomas',
         link: './views/thomas/index.html',
+    },
+    {
+        name: 'Théo',
+        link: './views/theo.html',
     }
 ];
+const promptRegister = localStorage.getItem('prompt-register');
 
 document.addEventListener('DOMContentLoaded', function () {
+    if (promptRegister === null) {
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        myModal.show();
+    }
 
     const studentList = document.querySelector('#cards');
     students.forEach(student => {
         studentList.innerHTML += `
-            <div class="col-12 col-md-6 col-lg-4">
-    <div class="card mb-4">
-        <div class="card-body">
-            <h5 class="card-title">${student.name}</h5>
-            <a href="${student.link}" class="btn btn-primary">Voir la carte</a>
-        </div>
-    </div>
-</div>`;
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">${student.name}</h5>
+                    <a href="${student.link}" class="btn btn-primary">Voir la carte</a>
+                </div>
+            </div>
+        </div>`;
     });
-
-    const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    myModal.show();
 });
